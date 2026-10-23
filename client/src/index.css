@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* ── Google Fonts ────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+/* ── Design Tokens (light mode) ─────────────────────── */
+@theme {
+  --color-ivory: #FAF7F2;
+  --color-forest: #1F3D2B;
+  --color-forest-light: #2A5239;
+  --color-brass: #B08D57;
+  --color-brass-light: #C9A96E;
+  --color-charcoal: #1C1C1C;
+  --color-stone: #E4DED3;
+  --color-stone-dark: #C9C1B3;
+  --color-danger: #B3412E;
+  --color-danger-light: #D9604D;
+  --color-success: #2D6A4F;
+  --color-white: #FFFFFF;
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+/* ── Base ────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* ── Focus Rings ─────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar (subtle) ──────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone-dark);
+  border-radius: 3px;
+}
+
+/* ── Reduced Motion ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
