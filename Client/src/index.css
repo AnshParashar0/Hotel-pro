@@ -1,20 +1,20 @@
 /* HotelPro Luxury Theme Styles */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --serif-font: 'Playfair Display', Georgia, serif;
-  --gold-primary: #d4af37;
-  --gold-hover: #c49f2b;
-  --gold-subtle: #fcf8e3;
+  --primary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif-font: 'DM Serif Display', Georgia, serif;
+  --gold-primary: #63e6d9e9;
+  --gold-hover: #5ec8c6c2;
+  --gold-subtle: #ebe7e7;
   --midnight: #0b1120;
   --slate-dark: #1e293b;
 }
 
 body {
   font-family: var(--primary-font);
-  color: #334155;
-  background-color: #f8fafc;
+  color: #1a1c1e;
+  background-color: #f8fafced;
   -webkit-font-smoothing: antialiased;
 }
 
