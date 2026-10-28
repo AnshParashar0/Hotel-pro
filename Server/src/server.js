@@ -17,15 +17,18 @@ const adminRoutes = require('./routes/adminRoutes');
 const app = express();
 
 // Middleware
-const allowedOrigin = process.env.CLIENT_URL || 'http://localhost:5173';
+const allowedOrigin = (process.env.CLIENT_URL || 'http://localhost:5173').replace(/\/$/, '');
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps, curl, or Postman) or matching origin
-      if (!origin || origin === allowedOrigin || origin.startsWith('http://localhost:')) {
+      const normalizedOrigin = origin ? origin.replace(/\/$/, '') : '';
+      const allowedOrigins = [allowedOrigin, 'http://localhost:5173'];
+
+      if (!origin || allowedOrigins.includes(normalizedOrigin) || normalizedOrigin.startsWith('http://localhost:')) {
         return callback(null, true);
       }
-      return callback(null, true); // Dev convenience
+
+      return callback(null, false);
     },
     credentials: true,
   })
@@ -49,6 +52,13 @@ app.get('/api/health', (req, res) => {
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),
     service: 'HotelPro API',
+  });
+});
+
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'HotelPro API running',
   });
 });
 

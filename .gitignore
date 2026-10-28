@@ -8,7 +8,11 @@ Client/dist/
 
 # Environment Variables
 Server/.env
+Server/.env.*
+Client/.env
+Client/.env.*
 .env
+.env.*
 .env.local
 
 # Logs and databases
